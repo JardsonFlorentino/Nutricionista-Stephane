@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
+    
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 5vw;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    
+
+}
+
+#logo03 {
+    height: 70px;
+}
+
+#agendar-consulta {
+     width: 230px;
+    height: 40px;
+    background: #7FFFD4;
+    box-shadow: 0px 10px 24px rgba(148, 153, 234, 0.0979959);    
+    font-size: 20px;
+    line-height: 36px;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+#agendar-consulta:hover {
+    opacity: 0.8;
+}
+
+#agendar-consulta:active {
+    opacity: 0.6;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-left: auto;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #222;
+    font-weight: 500;
+    transition: color 0.2s;
+
+}
+
+nav a:hover {
+    color: #7FFFD4;
+}
+
+.inicio {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding-left: 0;
+    padding-right: 0;
+    gap: 40px;
+}
+
+.inicio-img {
+    flex: 1;
+    text-align: left;
+    
+}
+
+.inicio-img img {
+    width: 700px; 
+    border-radius: 25px;
+}
+
+.inicio-info {
+    flex: 50px;
+    text-align: left;
+    max-width: 500px;
+    padding: 40px;
+    background: #7FFFD4;
+    border-radius: 15px;
+    box-shadow: 0px 10px 24px rgba(148, 153, 234, 0.0979959);
+    font-size: 20px;
+    line-height: 1.6;
+    color: #222;           
+}
+
+.inicio-info p {
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.inicio-info button {
+    background: #DAA520;
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    
+}
+
+.inicio-info button:hover {
+   opacity: 0.7;
+}   
+
+.inicio-info button:active {
+    opacity: 0.5;
+}
