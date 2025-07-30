@@ -1,3 +1,4 @@
+
 *{
     margin: 0;
     padding: 0;
@@ -69,57 +70,503 @@ nav a:hover {
     align-items: flex-start;
     flex-direction: row;
     max-width: 1100px;
-    margin: 40px auto;
+    margin: 40px 0 30px 30px;
     padding-left: 0;
     padding-right: 0;
-    gap: 40px;
+    gap: 30px;
 }
+
 
 .inicio-img {
-    flex: 1;
-    text-align: left;
-    
+    flex: 32;
+    text-align: right;
+    min-width: 700px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: 0;
 }
+
 
 .inicio-img img {
-    width: 700px; 
-    border-radius: 25px;
+    width: 1600px;
+    max-width: 100%;
+    border-radius: 40px;
 }
+
 
 .inicio-info {
-    flex: 50px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 0;
+    flex: 1;
     text-align: left;
-    max-width: 500px;
-    padding: 40px;
+    width: 100%;
+    padding: 40px 40px 40px 15px;
     background: #7FFFD4;
     border-radius: 15px;
-    box-shadow: 0px 10px 24px rgba(148, 153, 234, 0.0979959);
-    font-size: 20px;
-    line-height: 1.6;
-    color: #222;           
-}
-
-.inicio-info p {
-    margin-bottom: 20px;
-    font-weight: 500;
+    box-shadow: 0 0 24px rgba(148, 153, 234, 0.0979959);
+    font-size: 22px;
+    line-height: 1.7;
+    color: #222;
 }
 
 .inicio-info button {
-    background: #DAA520;
-    color: #fff;
+    display: inline-block;
+    background: #fff;
+    color: #222;
+    padding: 12px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
     border: none;
-    padding: 10px 24px;
-    border-radius: 24px;
-    font-size: 1rem;
     cursor: pointer;
-    transition: background 0.2s;
-    
+    transition: opacity 0.2s, background-color 0.2s;
+    margin-top: 20px;   
+   
 }
-
 .inicio-info button:hover {
    opacity: 0.7;
 }   
 
 .inicio-info button:active {
     opacity: 0.5;
+}      
+
+    .servicos {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding-left: 0;
+    padding-right: 0;       
 }
+
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 0 20px;
+    justify-items: center;
+    align-items: center;    
+    }
+
+.servicos h2 {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 0;
+    font-size: 2rem;
+    color: #222;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.servicos div {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 10px 24px rgba(148, 153, 234, 0.0979959);
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.servicos img {
+    width: 40%;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 15px;
+}                           
+.servicos h4 {
+    margin: 10px 0;
+    font-size: 1.5rem;
+    color: #222;
+}
+.servicos p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+.servicos a {
+    display: inline-block;
+    background: none;
+    color: #555;
+    padding: 10px 20px;
+    border-radius: 24px;
+    text-decoration: none;
+    transition: background 0.2s;
+    margin-top: 20px;
+}
+.servicos a:hover {    
+    color: #7FFFD4;
+}
+  
+.servicos-grid > div:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0px 16px 32px rgba(127, 255, 212, 0.25);
+}
+
+.sobre {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.sobre h2 {
+    text-align: center;
+    margin: 40px auto 50px auto;
+    font-size: 2rem;
+    color: #222;
+    font-weight: 500;
+}
+
+.sobre-conteudo {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+
+.sobre-conteudo p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 0;
+    flex: 1;
+    text-align: left;
+    width: 100%;
+    padding: 40px 0 40px 0;
+}
+
+
+
+.sobre-conteudo img {
+    width: 400px;
+    max-width: 45%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0px 10px 24px rgba(148, 153, 234, 0.0979959);
+    flex-shrink: 0;
+}
+
+.depoimentos {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.depoimentos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.depoimentos h2 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #222;
+    font-weight: 500;
+}
+
+.depoimentos div {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 10px 24px rgba(148, 153, 234, 0.0979959);
+}   
+
+.depoimentos p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}   .depoimentos p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}  
+
+.depoimentos p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.depoimentos {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.depoimentos h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: #222;
+    font-weight: 500;
+}
+
+.depoimentos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.depoimentos > div {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 10px 24px rgba(148, 153, 234, 0.0979959);
+    padding: 24px;
+    min-width: 250px;
+    max-width: 300px;
+    flex: 1 1 250px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;   
+}
+
+.depoimentos > div:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0px 16px 32px rgba(127, 255, 212, 0.25);
+}
+
+.receitas > div img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+.receitas {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.receitas h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: #222;
+    font-weight: 500;
+}
+
+.receitas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.receitas-grid > div {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 10px 24px rgba(148, 153, 234, 0.0979959);
+    padding: 24px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    
+}
+
+.receitas-grid > div:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0px 16px 32px rgba(127, 255, 212, 0.25);
+}
+
+.receitas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.saiba-mais-receitas {
+    display: inline-block;
+    background: none;
+    color: #555;
+    font-size: 1.7FFFD4;
+    padding: 10px 20px;
+    border-radius: 24px;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.saiba-mais-receitas:hover {
+    color: #7FFFD4;
+}
+
+.agendamento {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.agendamento form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.agendamento input {
+    padding: 12px 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.agendamento button {
+    padding: 12px 16px;
+    background: #7FFFD4;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.agendamento button:hover {
+    background: #66e0b4;
+}
+
+.agendamento button:active {
+    background: #4dcfa0;
+}
+
+.agendamento h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #222;
+    font-weight: 500;
+}
+
+.footer-box {
+    background: #f8f8f8;
+    border-radius: 0;
+    width: 100%;
+    margin: 0;
+    padding: 32px 80px;
+    box-sizing: border-box;
+         
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-sizing: border-box;
+    
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+}
+.footer-logo {
+    width: 80px;
+    height: auto;
+    margin-bottom: 8px;
+}
+.footer-box .rede-social {
+    display: flex;
+    gap: 10px;
+}
+.footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: start;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 40px auto 0 auto;
+    padding: 40px 0;
+}
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 0 120px;
+    
+   
+}
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+}
+}
+.footer .rede-social {
+    display: flex;
+    gap: 12px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #222;
+    font-weight: 500;
+    transition: color 0.2s;
+} 
+.footer-links a:hover {
+    color: #7FFFD4;
+}
+
+.footer-info p {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0;
+}
+
+.footer-info p:last-child {
+    margin-top: 8px;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+}   
+
+.footer-right img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 8px;
+}
+
+.footer-right .rede-social {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-right .rede-social img {
+    width: 80px;
+    height: 24px;
+    transition: transform 0.2s;
+}
+
+.footer-right .rede-social img:hover {
+    transform: scale(2);
+}   
