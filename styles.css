@@ -8,6 +8,10 @@
     
 }
 
+body {
+    margin: 0;
+    }
+
 header{
     display: flex;
     align-items: center;
@@ -15,8 +19,6 @@ header{
     padding: 10px 5vw;
     background-color: #fff;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    
-
 }
 
 #logo03 {
@@ -69,46 +71,44 @@ nav a:hover {
     display: flex;
     align-items: flex-start;
     flex-direction: row;
-    max-width: 1100px;
-    margin: 40px 0 30px 30px;
-    padding-left: 0;
-    padding-right: 0;
-    gap: 30px;
+    width: 100vw;
+    height: 100vh;
+    max-width: none;
+    margin: 80px 0 0 0;
+    padding: 0;
 }
 
 
 .inicio-img {
-    flex: 32;
+    flex: 1;
     text-align: right;
-    min-width: 700px;
-    height: 100%;
-    margin-left: auto;
-    margin-right: 0;
+    padding: 20px;
+    
 }
 
 
 .inicio-img img {
-    width: 1600px;
-    max-width: 100%;
+    width: 100%;
+    height: auto;
     border-radius: 40px;
 }
 
 
 .inicio-info {
+    flex: 1;
     font-size: 1.2rem;
     line-height: 1.6;
     color: #555;
-    margin-bottom: 0;
-    flex: 1;
+    margin: 0;  
     text-align: left;
-    width: 100%;
-    padding: 40px 40px 40px 15px;
+    padding: 40px;
     background: #7FFFD4;
     border-radius: 15px;
     box-shadow: 0 0 24px rgba(148, 153, 234, 0.0979959);
     font-size: 22px;
     line-height: 1.7;
     color: #222;
+    margin-top: 28px;
 }
 
 .inicio-info button {
@@ -570,3 +570,32 @@ nav a:hover {
 .footer-right .rede-social img:hover {
     transform: scale(2);
 }   
+
+a, button {
+    transition: transform 0.3s ease; 
+}
+
+a:hover, button:hover {
+    transform: scale(1.1); 
+}
+
+nav {
+    transition: transform 0.3s ease;
+}
+
+nav:hover {
+    transform: scale(1.05);
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #7FFFD4;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+}
+
+h2:hover {
+    color: #FF7F50;
+    transition: color 0.3s;
+}
