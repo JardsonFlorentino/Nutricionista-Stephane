@@ -1,42 +1,47 @@
-
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Oswald", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 400;
-    
+
 }
 
-body {
-    margin: 0;
-    }
 
-header{
+body {
+    /** aqui colocar o fundo uma imagem */
+    margin: 0;
+    background-image: url;
+    background-size: cover;
+    background-position: auto;
+    background-repeat: no-repeat;
+}
+
+header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 5vw;
-    background-color: #fff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background-color: #F5FDFC;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 #logo03 {
-    height: 70px;
+    height: 90px;
 }
 
 #agendar-consulta {
-     width: 230px;
+    width: 240px;
     height: 40px;
-    background: #7FFFD4;
-    box-shadow: 0px 10px 24px rgba(148, 153, 234, 0.0979959);    
+    background: #ad9273;
+    box-shadow: 0px 10px 24px rgba(148, 153, 234, 0.0979959);
     font-size: 20px;
     line-height: 36px;
-    color: #fff;
+    color: #F5FDFC;
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    transition: background-color 0.3s ease; 
+    transition: background-color 0.3s ease;
 }
 
 #agendar-consulta:hover {
@@ -55,16 +60,24 @@ header{
 }
 
 nav a {
-    margin: 0 10px;
+    /** deixar a letra mais grossa */
+    
+    margin: 0 20px;
     text-decoration: none;
-    color: #222;
-    font-weight: 500;
+    color: #876d55;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 36px;
     transition: color 0.2s;
+
 
 }
 
 nav a:hover {
-    color: #7FFFD4;
+    color: #2E5E5E;
+    transition: color 0.2s;
+    text-decoration: none;
+
 }
 
 .inicio {
@@ -83,7 +96,7 @@ nav a:hover {
     flex: 1;
     text-align: right;
     padding: 20px;
-    
+
 }
 
 
@@ -96,25 +109,45 @@ nav a:hover {
 
 .inicio-info {
     flex: 1;
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: #555;
-    margin: 0;  
+    font-size: 1.5rem;
+    line-height: 4rem;
+    color: #F5FDFC;
+    margin: 70px 28px auto;
     text-align: left;
-    padding: 40px;
-    background: #7FFFD4;
-    border-radius: 15px;
+    padding: 5px;
+    background: #2596be;
+    border-radius: 40px;
     box-shadow: 0 0 24px rgba(148, 153, 234, 0.0979959);
     font-size: 22px;
-    line-height: 1.7;
-    color: #222;
-    margin-top: 28px;
+    color: #F5FDFC;
+
+}
+
+#info-consulta {
+    padding: 20px;
+    letter-spacing: justify;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 36px;
+
+}
+
+#info-atendimento {
+     padding: 20px;
+    letter-spacing: justify;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 36px;
+    margin-top: auto;
+    color: #50ddd5;
+
 }
 
 .inicio-info button {
-    display: inline-block;
-    background: #fff;
-    color: #222;
+    display: block;
+    margin: auto auto 20px auto;
+    background: #50ddd5;
+    color: #2596be;
     padding: 12px 20px;
     border-radius: 30px;
     text-decoration: none;
@@ -123,22 +156,23 @@ nav a:hover {
     border: none;
     cursor: pointer;
     transition: opacity 0.2s, background-color 0.2s;
-    margin-top: 20px;   
-   
+
+
 }
+
 .inicio-info button:hover {
-   opacity: 0.7;
-}   
+    opacity: 0.7;
+}
 
 .inicio-info button:active {
     opacity: 0.5;
-}      
+}
 
-    .servicos {
+.servicos {
     max-width: 1100px;
     margin: 40px auto;
     padding-left: 0;
-    padding-right: 0;       
+    padding-right: 0;
 }
 
 .servicos-grid {
@@ -149,8 +183,8 @@ nav a:hover {
     margin-bottom: 40px;
     padding: 0 20px;
     justify-items: center;
-    align-items: center;    
-    }
+    align-items: center;
+}
 
 .servicos h2 {
     display: block;
@@ -159,11 +193,12 @@ nav a:hover {
     margin-bottom: 40px;
     margin-top: 0;
     font-size: 2rem;
-    color: #222;
+    color: #2596be;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+
 .servicos div {
     background: #fff;
     border-radius: 15px;
@@ -178,17 +213,20 @@ nav a:hover {
     height: 90px;
     object-fit: cover;
     border-radius: 15px;
-}                           
+}
+
 .servicos h4 {
     margin: 10px 0;
     font-size: 1.5rem;
-    color: #222;
+    color: #2596be;
 }
+
 .servicos p {
     font-size: 1rem;
     color: #555;
     margin-bottom: 10px;
 }
+
 .servicos a {
     display: inline-block;
     background: none;
@@ -199,11 +237,12 @@ nav a:hover {
     transition: background 0.2s;
     margin-top: 20px;
 }
-.servicos a:hover {    
+
+.servicos a:hover {
     color: #7FFFD4;
 }
-  
-.servicos-grid > div:hover {
+
+.servicos-grid>div:hover {
     transform: translateY(-8px) scale(1.05);
     box-shadow: 0px 16px 32px rgba(127, 255, 212, 0.25);
 }
@@ -279,17 +318,19 @@ nav a:hover {
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0px 10px 24px rgba(148, 153, 234, 0.0979959);
-}   
+}
 
 .depoimentos p {
     font-size: 1rem;
     color: #555;
     margin-bottom: 10px;
-}   .depoimentos p {
+}
+
+.depoimentos p {
     font-size: 1rem;
     color: #555;
     margin-bottom: 10px;
-}  
+}
 
 .depoimentos p {
     font-size: 1rem;
@@ -319,7 +360,7 @@ nav a:hover {
     justify-content: center;
 }
 
-.depoimentos > div {
+.depoimentos>div {
     background: #fff;
     border-radius: 15px;
     box-shadow: 0px 10px 24px rgba(148, 153, 234, 0.0979959);
@@ -328,21 +369,22 @@ nav a:hover {
     max-width: 300px;
     flex: 1 1 250px;
     text-align: center;
-    transition: transform 0.2s, box-shadow 0.2s;   
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.depoimentos > div:hover {
+.depoimentos>div:hover {
     transform: translateY(-8px) scale(1.05);
     box-shadow: 0px 16px 32px rgba(127, 255, 212, 0.25);
 }
 
-.receitas > div img {
+.receitas>div img {
     width: 120px;
     height: 120px;
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 12px;
 }
+
 .receitas {
     max-width: 1100px;
     margin: 40px auto;
@@ -364,17 +406,17 @@ nav a:hover {
     gap: 20px;
 }
 
-.receitas-grid > div {
+.receitas-grid>div {
     background: #fff;
     border-radius: 15px;
     box-shadow: 0px 10px 24px rgba(148, 153, 234, 0.0979959);
     padding: 24px;
     text-align: center;
     transition: transform 0.2s, box-shadow 0.2s;
-    
+
 }
 
-.receitas-grid > div:hover {
+.receitas-grid>div:hover {
     transform: translateY(-8px) scale(1.05);
     box-shadow: 0px 16px 32px rgba(127, 255, 212, 0.25);
 }
@@ -421,7 +463,8 @@ nav a:hover {
 }
 
 .agendamento button {
-    padding: 12px 12px;
+    width: 60%;
+   padding: 15px;
     font-size: 1.2rem;
     background: #7FFFD4;
     color: #fff;
@@ -430,6 +473,7 @@ nav a:hover {
     cursor: pointer;
     max-width: 300px;
     transition: background 0.2s;
+    margin: 0 auto;
 }
 
 .agendamento button:hover {
@@ -449,7 +493,7 @@ nav a:hover {
 }
 
 .footer-box {
-    background: #e0dc77;
+    background: #F5FDFC;
     border-radius: 0;
     width: 100%;
     margin: 0;
@@ -460,68 +504,77 @@ nav a:hover {
     justify-content: space-between;
     align-items: flex-start;
     box-sizing: border-box;
-    
-.footer-links {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .footer-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .footer-right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 12px;
+    }
+
+    .footer-logo {
+        width: 100px;
+        height: auto;
+        margin-bottom: 0px;
+        height: auto;
+        margin-bottom: 8px;
+        margin: 0 0 0 0;
+    }
+
+    .footer-box .rede-social {
+        display: flex;
+        gap: 10px;
+    }
+
+    .footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: start;
+        gap: 40px;
+        max-width: 1100px;
+        margin: 40px auto 0 auto;
+        padding: 40px 0;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 0 120px;
+
+
+    }
+
+    .footer-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .footer-right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 15px;
+    }
 }
-.footer-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-}
-.footer-right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 12px;
-}
-.footer-logo {
-    width: 100px;
-    height: auto;
-    margin-bottom: 0px;
-    height: auto;
-    margin-bottom: 8px;
-    margin: 0 0 0 0 ;
-}
-.footer-box .rede-social {
-    display: flex;
-    gap: 10px;
-}
-.footer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    align-items: start;
-    gap: 40px;
-    max-width: 1100px;
-    margin: 40px auto 0 auto;
-    padding: 40px 0;
-}
-.footer-links {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    padding: 0 120px;
-    
-   
-}
-.footer-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-}
-.footer-right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 15px;
-}
-}
+
 .footer .rede-social {
     display: flex;
     gap: 12px;
@@ -532,7 +585,8 @@ nav a:hover {
     color: #222;
     font-weight: 500;
     transition: color 0.2s;
-} 
+}
+
 .footer-links a:hover {
     color: #7FFFD4;
 }
@@ -552,7 +606,7 @@ nav a:hover {
     flex-direction: column;
     align-items: flex-end;
     gap: 12px;
-}   
+}
 
 .footer-right img {
     width: 80px;
@@ -573,14 +627,16 @@ nav a:hover {
 
 .footer-right .rede-social img:hover {
     transform: scale(2);
-}   
-
-a, button {
-    transition: transform 0.3s ease; 
 }
 
-a:hover, button:hover {
-    transform: scale(1.1); 
+a,
+button {
+    transition: transform 0.3s ease;
+}
+
+a:hover,
+button:hover {
+    transform: scale(1.1);
 }
 
 nav {
@@ -600,7 +656,7 @@ h2 {
 }
 
 h2:hover {
-    color: #FF7F50;
+    color: #50ddd5;
     transition: color 0.3s;
 }
 
