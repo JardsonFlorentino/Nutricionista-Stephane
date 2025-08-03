@@ -15,6 +15,7 @@ body {
     background-size: cover;
     background-position: auto;
     background-repeat: no-repeat;
+    overflow-x: hidden; 
 }
 
 header {
@@ -24,10 +25,6 @@ header {
     padding: 10px 5vw;
     background-color: #F5FDFC;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-#logo03 {
-    height: 90px;
 }
 
 #agendar-consulta {
@@ -41,17 +38,22 @@ header {
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: color 0.3s, transform 0.3s;
 }
 
 #agendar-consulta:hover {
-    opacity: 0.8;
+    background: #50ddd5;
+    color: #2596be;
+    transform: translateY(-4px) scale(0.98);
 }
 
-#agendar-consulta:active {
-    opacity: 0.6;
+#logo03 {
+    height: 90px;
 }
-
+#logo03:hover {
+    transform: translateY(-8px) scale(1.02);
+    
+}
 .menu {
     display: flex;
     align-items: center;
@@ -60,8 +62,7 @@ header {
 }
 
 nav a {
-    /** deixar a letra mais grossa */
-    
+
     margin: 0 20px;
     text-decoration: none;
     color: #876d55;
@@ -69,40 +70,51 @@ nav a {
     font-size: 18px;
     line-height: 36px;
     transition: color 0.2s;
-
-
+    transition: color 0.2s;
 }
 
 nav a:hover {
-    color: #2E5E5E;
-    transition: color 0.2s;
-    text-decoration: none;
-
+    color: #50ddd5;
+    transform: color 0.2s;
+    transform: translateY(-4px) scale(0.98);
 }
 
 .inicio {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: row;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    min-height: 90vh;
     max-width: none;
-    margin: 80px 0 0 0;
-    padding: 0;
+    margin: 20px 0 20px 0;
+    padding: 20px 5vw;
+    gap: 20px;
 }
 
 
 .inicio-img {
-    flex: 1;
-    text-align: right;
-    padding: 20px;
+    flex: 0 0 60%;
+    padding: 0;   
+    transition: color 0.3s, transform 0.3s;
+}
 
+.inicio-img img:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0px 16px 40px rgba(37, 150, 190, 0.25);
 }
 
 
+.inicio-conteudo {
+    flex: 0 0 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .inicio-img img {
-    width: 100%;
+    width: 95%;
     height: auto;
+    min-width: 300px; /* Garante que a imagem não fique muito pequena */
     border-radius: 40px;
 }
 
@@ -112,7 +124,7 @@ nav a:hover {
     font-size: 1.5rem;
     line-height: 4rem;
     color: #F5FDFC;
-    margin: 70px 28px auto;
+    margin: 0 15px auto;
     text-align: left;
     padding: 5px;
     background: #2596be;
@@ -120,28 +132,42 @@ nav a:hover {
     box-shadow: 0 0 24px rgba(148, 153, 234, 0.0979959);
     font-size: 22px;
     color: #F5FDFC;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
 }
 
+.inicio-info:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0px 16px 40px rgba(37, 150, 190, 0.25);
+}
+
 #info-consulta {
-    padding: 20px;
+    padding: 50px;
     letter-spacing: justify;
     font-weight: 400;
     font-size: 20px;
     line-height: 36px;
+    margin-top: auto;
 
 }
 
 #info-atendimento {
-     padding: 20px;
+    border-radius: 40px;
+    padding: 30px;
     letter-spacing: justify;
     font-weight: 400;
     font-size: 15px;
     line-height: 36px;
-    margin-top: auto;
+    margin-top: 0;
     color: #50ddd5;
-
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+#info-atendimento:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0px 16px 40px rgba(37, 150, 190, 0.25);
+}
+
 
 .inicio-info button {
     display: block;
@@ -161,7 +187,8 @@ nav a:hover {
 }
 
 .inicio-info button:hover {
-    opacity: 0.7;
+   background: #66e0b4;    
+    transform: translateY(-8px) scale(1.02);
 }
 
 .inicio-info button:active {
@@ -186,17 +213,20 @@ nav a:hover {
     align-items: center;
 }
 
-.servicos h2 {
-    display: block;
-    width: 100%;
+.servicos h2 {  
     text-align: center;
-    margin-bottom: 40px;
-    margin-top: 0;
+    margin-bottom: 40px;    
     font-size: 2rem;
     color: #2596be;
-    font-weight: 500;
+    font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servicos h2:hover {
+    color: #50ddd5;
+    transform: translateY(-8px) scale(1.02);
+    
 }
 
 .servicos div {
@@ -219,6 +249,7 @@ nav a:hover {
     margin: 10px 0;
     font-size: 1.5rem;
     color: #2596be;
+    font-weight: bold;
 }
 
 .servicos p {
@@ -230,12 +261,14 @@ nav a:hover {
 .servicos a {
     display: inline-block;
     background: none;
-    color: #555;
+    color: #876d55;
     padding: 10px 20px;
     border-radius: 24px;
     text-decoration: none;
     transition: background 0.2s;
     margin-top: 20px;
+    font-weight: bold;
+    font-size: 1rem;
 }
 
 .servicos a:hover {
@@ -249,7 +282,7 @@ nav a:hover {
 
 .sobre {
     max-width: 1300px;
-    margin:0 auto;
+    margin: 30px auto;
     padding-left: 0;
     padding-right: 0;
 }
@@ -258,8 +291,14 @@ nav a:hover {
     text-align: center;
     margin: 0 0 70px 0;
     font-size: 2rem;
-    color: #222;
-    font-weight: 500;
+    color: #2596be;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.sobre h2:hover {
+    color: #50ddd5;
+    transform: translateY(-8px) scale(1.02);
 }
 
 .sobre-conteudo {
@@ -270,7 +309,8 @@ nav a:hover {
 
 
 .sobre-conteudo p {
-    font-size: 1.2rem;
+    border-radius: 20px;
+    font-size: 1.4rem;
     line-height: 1.6;
     color: #555;
     margin-bottom: 0;
@@ -278,8 +318,13 @@ nav a:hover {
     text-align: justify;
     width: 100%;
     padding: 40px 0 40px 0;
+    transition: color 0.3s, transform 0.3s;
 }
 
+.sobre-conteudo p:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0px 16px 40px rgba(37, 150, 190, 0.25);
+}
 
 
 .sobre-conteudo img {
@@ -289,19 +334,19 @@ nav a:hover {
     border-radius: 15px;
     box-shadow: 0px 10px 24px rgba(148, 153, 234, 0.0979959);
     flex-shrink: 0;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.sobre-conteudo img:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0px 16px 40px rgba(37, 150, 190, 0.25);
 }
 
 .depoimentos {
     max-width: 1100px;
-    margin: 40px auto;
+    margin: 40px auto 0 auto;
     padding-left: 0;
     padding-right: 0;
-}
-
-.depoimentos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
 }
 
 .depoimentos h2 {
@@ -309,48 +354,14 @@ nav a:hover {
     width: 100%;
     margin-bottom: 20px;
     font-size: 2rem;
-    color: #222;
-    font-weight: 500;
+    color: #2596be;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
 }
 
-.depoimentos div {
-    background: #fff;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0px 10px 24px rgba(148, 153, 234, 0.0979959);
-}
-
-.depoimentos p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.depoimentos p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.depoimentos p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.depoimentos {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.depoimentos h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 2rem;
-    color: #222;
-    font-weight: 500;
+.depoimentos h2:hover {
+    color: #50ddd5;
+    transform: translateY(-8px) scale(1.02);
 }
 
 .depoimentos {
@@ -377,14 +388,6 @@ nav a:hover {
     box-shadow: 0px 16px 32px rgba(127, 255, 212, 0.25);
 }
 
-.receitas>div img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 12px;
-}
-
 .receitas {
     max-width: 1100px;
     margin: 40px auto;
@@ -396,13 +399,19 @@ nav a:hover {
     text-align: center;
     margin-bottom: 40px;
     font-size: 2rem;
-    color: #222;
-    font-weight: 500;
+    color: #2596be;
+    font-weight: bold;
+     transition: color 0.3s, transform 0.3s
+}
+
+.receitas h2:hover {
+    color: #50ddd5;
+    transform: translateY(-8px) scale(1.02);
 }
 
 .receitas-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
 }
 
@@ -421,25 +430,28 @@ nav a:hover {
     box-shadow: 0px 16px 32px rgba(127, 255, 212, 0.25);
 }
 
-.receitas-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+.receitas-grid img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 12px;
 }
 
 .saiba-mais-receitas {
     display: inline-block;
     background: none;
-    color: #555;
-    font-size: 1.7FFFD4;
+    color: #876d55;
+    font-size: 1rem;
+    font-weight: bold;
     padding: 10px 20px;
-    border-radius: 24px;
     text-decoration: none;
-    transition: background 0.2s;
+     transition: color 0.3s, transform 0.3s
 }
 
 .saiba-mais-receitas:hover {
     color: #7FFFD4;
+     transform: translateY(-8px) scale(1.02);
 }
 
 .agendamento {
@@ -464,21 +476,25 @@ nav a:hover {
 
 .agendamento button {
     width: 60%;
-   padding: 15px;
+    padding: 15px;
     font-size: 1.2rem;
     background: #7FFFD4;
     color: #fff;
     border: none;
-    border-radius: 2px;
+    border-radius: 40px;
     cursor: pointer;
     max-width: 300px;
     transition: background 0.2s;
     margin: 0 auto;
+     transition: color 0.3s, transform 0.3s;
 }
 
 .agendamento button:hover {
-    background: #66e0b4;
+    background: #66e0b4;    
+    transform: translateY(-8px) scale(1.02);
+    
 }
+
 
 .agendamento button:active {
     background: #4dcfa0;
@@ -486,206 +502,170 @@ nav a:hover {
 
 .agendamento h2 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     font-size: 2rem;
-    color: #222;
-    font-weight: 500;
+    color: #2596be;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.agendamento h2:hover {
+    color: #50ddd5;
+    transform: translateY(-8px) scale(1.02);
+}
+
+#agendar-consulta {
+    width: 240px;
+    height: 40px;
+    background: #ad9273;
+    box-shadow: 0px 10px 24px rgba(148, 153, 234, 0.0979959);
+    font-size: 20px;
+    line-height: 36px;
+    color: #F5FDFC;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#agendar-consulta:hover {
+    opacity: 0.9;
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0px 16px 40px rgba(37, 150, 190, 0.25);
+}
+#agendar-consulta:active {
+    opacity: 0.7;
+}
+
+.footer {
+    background: #F5FDFC;
+    width: 100%;
+    padding: 40px 5vw;
+    margin-top: 60px;
+    box-sizing: border-box;
 }
 
 .footer-box {
-    background: #F5FDFC;
-    border-radius: 0;
-    width: 100%;
-    margin: 0;
-    padding: 32px 80px;
-    box-sizing: border-box;
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
-    box-sizing: border-box;
-
-    .footer-links {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-    }
-
-    .footer-info {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-    }
-
-    .footer-right {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 12px;
-    }
-
-    .footer-logo {
-        width: 100px;
-        height: auto;
-        margin-bottom: 0px;
-        height: auto;
-        margin-bottom: 8px;
-        margin: 0 0 0 0;
-    }
-
-    .footer-box .rede-social {
-        display: flex;
-        gap: 10px;
-    }
-
-    .footer {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        align-items: start;
-        gap: 40px;
-        max-width: 1100px;
-        margin: 40px auto 0 auto;
-        padding: 40px 0;
-    }
-
-    .footer-links {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-        padding: 0 120px;
-
-
-    }
-
-    .footer-info {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-    }
-
-    .footer-right {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 15px;
-    }
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.footer .rede-social {
+.footer-links,
+.footer-info,
+.footer-right {
+    flex: 1;
+    min-width: 220px;
+}
+
+.footer-links {
     display: flex;
-    gap: 12px;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-links h4 {
+    font-size: 1.2rem;
+    color: #ad9273;
+    font-weight: bold;
+    margin: auto;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.footer-links h4:hover {
+    color: #50ddd5;
+    transform: translateY(-8px) scale(1.02);
 }
 
 .footer-links a {
     text-decoration: none;
-    color: #222;
-    font-weight: 500;
+    color: #2596be;
+    font-weight: bold;
     transition: color 0.2s;
+    margin: auto ;
+     transition: color 0.3s, transform 0.3s;
 }
 
 .footer-links a:hover {
-    color: #7FFFD4;
+    color: #50ddd5;
+    transform: translateY(-8px) scale(1.02);    
+}
+
+.footer-info h4 {
+    font-size: 1.2rem;
+    color: #ad9273;
+    font-weight: bold;
+     transition: color 0.3s, transform 0.3s;
+}
+
+.footer-info h4:hover {
+    color: #50ddd5;
+    transform: translateY(-8px) scale(1.02);
 }
 
 .footer-info p {
     font-size: 0.9rem;
-    color: #555;
-    margin: 0;
-}
-
-.footer-info p:last-child {
-    margin-top: 8px;
+    color: #2596be;
+    margin: 20px 0;
 }
 
 .footer-right {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start;
     gap: 12px;
 }
 
-.footer-right img {
-    width: 80px;
+.footer-logo {
+    width: 100px;
     height: auto;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
-.footer-right .rede-social {
+.footer .rede-social {
     display: flex;
-    gap: 10px;
+    gap: 16px;
 }
 
-.footer-right .rede-social img {
-    width: 80px;
-    height: 24px;
-    transition: transform 0.2s;
+.footer .rede-social i {
+    font-size: 24px;
+    color: #876d55;
+    transition: color 0.3s, transform 0.3s;
 }
 
-.footer-right .rede-social img:hover {
-    transform: scale(2);
+.footer .rede-social i:hover {
+    color: #2596be;
+    transform: scale(1.2);
 }
 
-a,
-button {
-    transition: transform 0.3s ease;
-}
+/* === MEDIA QUERIES PARA RESPONSIVIDADE === */
 
-a:hover,
-button:hover {
-    transform: scale(1.1);
-}
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
 
-nav {
-    transition: transform 0.3s ease;
-}
+    .menu {
+        margin-left: 0;
+    }
 
-nav:hover {
-    transform: scale(1.05);
-}
+    .inicio, .sobre-conteudo {
+        flex-direction: column;
+        text-align: center;
+    }
 
-h2 {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #7FFFD4;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-    margin: 20px 0;
-}
+    .footer-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
-h2:hover {
-    color: #50ddd5;
-    transition: color 0.3s;
-}
-
-h2 {
-    transition: transform 0.3s ease;
-}
-
-h2:hover {
-    transform: scale(1.05);
-}
-
-h4 {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #0a0a0a;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-    margin: 20px 0;
-    margin-bottom: 20px;
-}
-
-h4:hover {
-    color: #FF7F50;
-    transition: color 0.3s;
-}
-
-h4 {
-    transition: transform 0.3s ease;
-}
-
-h4:hover {
-    transform: scale(1.05);
+    .footer-right {
+        align-items: center;
+    }
 }

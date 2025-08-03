@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <link rel="icon" href="./assets//logo01.PNG" type="image/x-icon">
+    <link rel="icon" href="./assets/logo01.PNG" type="image/x-icon">
     <title> Nutricionista Stephane </title>
 
 </head>
@@ -19,11 +19,11 @@
     <header class="container">
         <img src="./assets/logo03.png" alt="Logo" id="logo03">
         <div class="menu">
-            <nav>
-                <a href="#"><b>Início</b></a>
-                <a href="#"><b>Sobre</b></a>
-                <a href="#"><b>Serviços</b></a>
-                <a href="#"><b>Contato</b></a>
+            <nav class="menu-links">
+                <a href="#">Início</a>
+                <a href="#">Sobre</a>
+                <a href="#">Serviços</a>
+                <a href="#">Contato</a>
             </nav>
         </div>
         <button id="agendar-consulta" class="btn-primario">Agende sua consulta</button>
@@ -34,11 +34,17 @@
             <div class="inicio-img">
                 <img src="./assets/Foto Ster01.jpg" alt="Foto da nutricionista">
             </div>
-            <div class="inicio-info">
-                <p id="info-consulta">Faço a dieta prática, que se encaixa na sua rotina e alcance seus objetivos de forma saudável e
-                    sustentável sem depender de um papel.</p>
-                <button id="saiba-mais" class="btn-primario">Saiba mais</button>
-                <!--<p id="info-atendimento">ATENDO VOCÊ DE ONDE ESTIVER! Consultas online para qualquer lugar do mundo e presenciais nas cidades de Maragogi-AL e Barreiros-PE.</p>-->
+            <div class="inicio-conteudo">
+                <div class="inicio-info">
+                    <p id="info-consulta">Faço a dieta prática, que se encaixa na sua rotina e alcance seus objetivos de
+                        forma saudável e
+                        sustentável sem depender de um papel.</p>
+                    <button id="saiba-mais" class="btn-primario">Saiba mais</button>
+                </div>
+                <div class="inicio-atendimento" id="info-atendimento">
+                    <p>ATENDO VOCÊ DE ONDE ESTIVER! Consultas online para qualquer lugar do mundo e presenciais nas
+                        cidades de Maragogi-AL e Barreiros-PE.</p>
+                </div>
             </div>
         </section>
 
@@ -48,7 +54,7 @@
                 <img src="./assets/Foto Ster02.jpg" alt="Foto da nutricionista">
                 <p>Nutricionista Stephane é especialista em nutrição e saúde, com anos de experiência ajudando pessoas a
                     alcançarem seus objetivos de forma saudável e sustentável.</p>
-                 <img src="./assets/Foto Ster03.jpg" alt="Foto da nutricionista">
+                <img src="./assets/Foto Ster03.jpg" alt="Foto da nutricionista">
             </div>
         </section>
 
@@ -58,7 +64,7 @@
 
             <div class="servicos-grid">
 
-                
+
                 <div>
                     <img src="./assets/hipertrofia.jpg" alt="Hipertrofia">
                     <h4>Hipertrofia</h4>
@@ -73,7 +79,7 @@
                     <a href="#">Saiba mais</a>
                 </div>
 
-                  <div>
+                <div>
                     <img src="./assets/Nutrição Clínica.jpg" alt="Nutrição Clínica">
                     <h4>Nutrição Clínica</h4>
                     <p>Atendimento nutricional para condições de saúde específicas, como diabetes, hipertensão e doenças
@@ -107,7 +113,7 @@
                 </div>
 
 
-            
+
                 <div>
                     <img src="./assets/consulta online.png" alt="Consultoria online">
                     <h4>Consultoria Online</h4>
@@ -117,7 +123,7 @@
             </div>
         </section>
 
-             
+
 
         <section class="depoimentos container">
             <h2>Depoimentos</h2>
@@ -192,7 +198,7 @@
 
     <footer class="footer">
         <div class="footer-box">
-            <div class="footer-right" style="flex-direction: row; align-items: center; gap: 24px;">
+            <div class="footer-right">
                 <a href="#">
                     <img src="./assets/logo01.png" alt="logo" class="footer-logo">
                 </a>
@@ -208,13 +214,13 @@
                     </a>
                 </div>
             </div>
-            <div class="footer-info" style="align-self: flex-start; margin-top: 0;">
+            <div class="footer-info">
                 <h4>Contato</h4>
                 <p>Telefone: (XX) XXXXX-XXXX</p>
                 <p>Email: contato@nutricionistastephane.com</p>
                 <p>Endereço: Rua Exemplo, 123 - Cidade, Estado</p>
             </div>
-            <div class="footer-links" style="padding-left: 64px;">
+            <div class="footer-links">
                 <h4>Links Rápidos</h4>
                 <a href="#">Início</a>
                 <a href="#">Sobre</a>
