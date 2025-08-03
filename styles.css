@@ -621,9 +621,15 @@ nav a:hover {
 }
 
 .footer-logo {
-    width: 100px;
+    width: 150px;
     height: auto;
     margin-bottom: 10px;
+    margin: auto auto 20px 0;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.footer-logo:hover {
+    transform: translateY(-8px) scale(1.02);
 }
 
 .footer .rede-social {
@@ -632,7 +638,7 @@ nav a:hover {
 }
 
 .footer .rede-social i {
-    font-size: 24px;
+    font-size: 30px;
     color: #876d55;
     transition: color 0.3s, transform 0.3s;
 }
