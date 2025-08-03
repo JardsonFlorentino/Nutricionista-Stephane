@@ -675,16 +675,23 @@ nav a:hover {
     transform: scale(1.2);
 }
 
-/* === MEDIA QUERIES PARA RESPONSIVIDADE === */
 
-@media (max-width: 768px) {
+
+@media (max-width: 400px) {
     header {
-        flex-direction: column;
+        flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+        justify-content: center; /* Centraliza o logo e o menu quando a linha quebra */
         gap: 15px;
     }
 
     .menu {
         margin-left: 0;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column; /* Coloca os links um abaixo do outro */
+        align-items: center; /* Centraliza os links */
     }
 
     .inicio,
