@@ -159,7 +159,7 @@ nav a:hover {
     border-radius: 40px;
     padding: 30px;
     letter-spacing: justify;
-    font-weight: bold;
+    font-weight: bolder;
     font-size: 15px;
     line-height: 36px;
     margin-top: 0;
@@ -174,24 +174,21 @@ nav a:hover {
 
 
 #saiba-mais {
-    display: block;
+   display: flex;
+    align-items: center;
+    justify-content: center;
     margin: auto auto 20px auto;
-    background: #50ddd5;
-    text-align: center; 
-    padding: 12px 20px;
-    border-radius: 30px;
-    width: 200px;   
+    background: #50ddd5;    
+    width: 130px;
+    height: 50px;
+    border-radius: 40px; /* pode ajustar como quiser */  
     text-decoration: none;
     color: #2596be;
-    padding: 12px 10px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: 500;
+    font-size: 1rem; /* opcional: reduzir a fonte também */
+    font-weight: bolder;
     border: none;
     cursor: pointer;
     transition: opacity 0.2s, background-color 0.2s;
-
 
 }
 
@@ -330,7 +327,7 @@ nav a:hover {
     width: 90%;
     padding: 85px;
     transition: color 0.3s, transform 0.3s;
-   
+
 }
 
 .sobre-conteudo p:hover {
@@ -430,14 +427,14 @@ nav a:hover {
     margin: 15px auto;
     text-align: justify;
     width: 90%;
-    
+
 
 }
 
 .receitas h4 {
     color: #2596be;
     font-weight: bold;
-    
+
 }
 
 .receitas-grid {
@@ -570,31 +567,34 @@ nav a:hover {
 }
 
 .whatsapp-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 60px;
-  height: 60px;
-  z-index: 9999;
-  background-color: #25d366;
-  border-radius: 50%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.3s ease-in-out;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    z-index: 9999;
+    background-color: #25d366;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
 }
 
 .whatsapp-button:hover {
-  transform: scale(1.1);
-  background-color: #20c15a; /* Tom de verde um pouco mais claro para feedback */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Sombra mais pronunciada para efeito de "elevação" */
+    transform: scale(1.1);
+    background-color: #20c15a;
+    /* Tom de verde um pouco mais claro para feedback */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    /* Sombra mais pronunciada para efeito de "elevação" */
 }
 
 .whatsapp-button img {
-  width: 30px;
-  height: 30px;
-  filter: invert(1); /* deixa o ícone branco */
+    width: 30px;
+    height: 30px;
+    filter: invert(1);
+    /* deixa o ícone branco */
 }
 
 
@@ -627,14 +627,16 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    text-align: center; /* Centraliza o conteúdo dos links da forma correta */
+    text-align: center;
+    /* Centraliza o conteúdo dos links da forma correta */
 }
 
 .footer-links h4 {
     font-size: 1.2rem;
     color: #ad9273;
     font-weight: bold;
-    margin: 0 0 10px 0; /* Zera margens laterais que causavam o problema */
+    margin: 0 0 10px 0;
+    /* Zera margens laterais que causavam o problema */
     transition: color 0.3s, transform 0.3s;
 }
 
@@ -648,8 +650,10 @@ nav a:hover {
     color: #2596be;
     font-weight: bold;
     transition: color 0.3s, transform 0.3s;
-    margin: 0; /* Zera margens laterais */
-    padding: 5px 0; /* Controla o espaçamento vertical */
+    margin: 0;
+    /* Zera margens laterais */
+    padding: 5px 0;
+    /* Controla o espaçamento vertical */
 }
 
 .footer-links a:hover {
@@ -713,6 +717,7 @@ nav a:hover {
 
 
 @media (max-width: 800px) {
+
     /* Garante que a página não ultrapasse a largura da tela, resolvendo a rolagem horizontal */
     body {
         overflow-x: hidden;
@@ -735,7 +740,7 @@ nav a:hover {
         flex-direction: column;
         align-items: center;
         gap: 10px;
-    
+
     }
 
     .inicio,
@@ -745,8 +750,10 @@ nav a:hover {
     }
 
     .inicio-img img {
-        min-width: unset; /* Remove a largura mínima que causa overflow */
-        width: 90%;       /* Garante que a imagem se ajuste */
+        min-width: unset;
+        /* Remove a largura mínima que causa overflow */
+        width: 90%;
+        /* Garante que a imagem se ajuste */
     }
 
     /* Ajusta o grid de serviços para não estourar em telas pequenas */
@@ -770,23 +777,29 @@ nav a:hover {
     }
 
     .sobre-conteudo p {
-        padding: 30px 20px; /* Ajusta o padding para um visual mais limpo */
-        width: auto; /* Permite que o padding controle a largura */
-        font-size: 1rem; /* Tamanho de fonte mais legível para mobile */
+        padding: 30px 20px;
+        /* Ajusta o padding para um visual mais limpo */
+        width: auto;
+        /* Permite que o padding controle a largura */
+        font-size: 1rem;
+        /* Tamanho de fonte mais legível para mobile */
         line-height: 1.6;
     }
 
     .sobre-conteudo img {
-        max-width: 90%; /* Garante que a imagem se ajuste à tela */
+        max-width: 90%;
+        /* Garante que a imagem se ajuste à tela */
     }
 
     .inicio-info {
         padding: 25px;
-        line-height: 1.5; /* Corrige espaçamento de linha excessivo */
+        line-height: 1.5;
+        /* Corrige espaçamento de linha excessivo */
     }
 
     .agendamento button {
-        width: 100%; /* Botão ocupa a largura total para facilitar o clique */
+        width: 100%;
+        /* Botão ocupa a largura total para facilitar o clique */
     }
 
     .footer-box {
@@ -798,5 +811,5 @@ nav a:hover {
     .footer-right {
         align-items: center;
     }
- 
+
 }
