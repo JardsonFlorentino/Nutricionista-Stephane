@@ -159,7 +159,7 @@ nav a:hover {
     border-radius: 40px;
     padding: 30px;
     letter-spacing: justify;
-    font-weight: 400;
+    font-weight: bold;
     font-size: 15px;
     line-height: 36px;
     margin-top: 0;
@@ -173,12 +173,17 @@ nav a:hover {
 }
 
 
-.inicio-info button {
+#saiba-mais {
     display: block;
     margin: auto auto 20px auto;
     background: #50ddd5;
-    color: #2596be;
+    text-align: center; 
     padding: 12px 20px;
+    border-radius: 30px;
+    width: 200px;   
+    text-decoration: none;
+    color: #2596be;
+    padding: 12px 10px;
     border-radius: 30px;
     text-decoration: none;
     font-size: 1.2rem;
@@ -190,12 +195,12 @@ nav a:hover {
 
 }
 
-.inicio-info button:hover {
+#saiba-mais:hover {
     background: #66e0b4;
     transform: translateY(-8px) scale(1.02);
 }
 
-.inicio-info button:active {
+#saiba-mais:active {
     opacity: 0.5;
 }
 
@@ -564,6 +569,35 @@ nav a:hover {
     opacity: 0.7;
 }
 
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  z-index: 9999;
+  background-color: #25d366;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+  background-color: #20c15a; /* Tom de verde um pouco mais claro para feedback */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Sombra mais pronunciada para efeito de "elevação" */
+}
+
+.whatsapp-button img {
+  width: 30px;
+  height: 30px;
+  filter: invert(1); /* deixa o ícone branco */
+}
+
+
 .footer {
     background: #F5FDFC;
     width: 100%;
@@ -593,13 +627,14 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    text-align: center; /* Centraliza o conteúdo dos links da forma correta */
 }
 
 .footer-links h4 {
     font-size: 1.2rem;
     color: #ad9273;
     font-weight: bold;
-    margin: auto;
+    margin: 0 0 10px 0; /* Zera margens laterais que causavam o problema */
     transition: color 0.3s, transform 0.3s;
 }
 
@@ -612,9 +647,9 @@ nav a:hover {
     text-decoration: none;
     color: #2596be;
     font-weight: bold;
-    transition: color 0.2s;
-    margin: auto;
     transition: color 0.3s, transform 0.3s;
+    margin: 0; /* Zera margens laterais */
+    padding: 5px 0; /* Controla o espaçamento vertical */
 }
 
 .footer-links a:hover {
@@ -677,27 +712,81 @@ nav a:hover {
 
 
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
+    /* Garante que a página não ultrapasse a largura da tela, resolvendo a rolagem horizontal */
+    body {
+        overflow-x: hidden;
+    }
+
     header {
-        flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
-        justify-content: center; /* Centraliza o logo e o menu quando a linha quebra */
-        gap: 15px;
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
 
     .menu {
         margin-left: 0;
+        justify-content: center;
     }
 
     nav {
         display: flex;
-        flex-direction: column; /* Coloca os links um abaixo do outro */
-        align-items: center; /* Centraliza os links */
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    
     }
 
     .inicio,
     .sobre-conteudo {
         flex-direction: column;
         text-align: center;
+    }
+
+    .inicio-img img {
+        min-width: unset; /* Remove a largura mínima que causa overflow */
+        width: 90%;       /* Garante que a imagem se ajuste */
+    }
+
+    /* Ajusta o grid de serviços para não estourar em telas pequenas */
+    .servicos-grid {
+        /* A coluna terá no mínimo ~260px, ou se ajustará para preencher o espaço */
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    }
+
+    /* Garante que o grid de receitas também se ajuste em telas muito pequenas */
+    .receitas-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+
+    /* Reduz a margem excessiva da seção de serviços em telas menores */
+    .servicos {
+        margin: 60px auto;
+    }
+
+    .sobre h2 {
+        margin-bottom: 40px;
+    }
+
+    .sobre-conteudo p {
+        padding: 30px 20px; /* Ajusta o padding para um visual mais limpo */
+        width: auto; /* Permite que o padding controle a largura */
+        font-size: 1rem; /* Tamanho de fonte mais legível para mobile */
+        line-height: 1.6;
+    }
+
+    .sobre-conteudo img {
+        max-width: 90%; /* Garante que a imagem se ajuste à tela */
+    }
+
+    .inicio-info {
+        padding: 25px;
+        line-height: 1.5; /* Corrige espaçamento de linha excessivo */
+    }
+
+    .agendamento button {
+        width: 100%; /* Botão ocupa a largura total para facilitar o clique */
     }
 
     .footer-box {
@@ -709,4 +798,5 @@ nav a:hover {
     .footer-right {
         align-items: center;
     }
+ 
 }
