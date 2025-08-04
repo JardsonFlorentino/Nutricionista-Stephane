@@ -115,8 +115,7 @@ nav a:hover {
 .inicio-img img {
     width: 95%;
     height: auto;
-    min-width: 300px;
-    /* Garante que a imagem não fique muito pequena */
+    min-width: 300px;    
     border-radius: 40px;
 }
 
@@ -180,11 +179,9 @@ nav a:hover {
     width: 130px;
     height: 50px;
     border-radius: 40px;
-    /* pode ajustar como quiser */
     text-decoration: none;
     color: #2596be;
     font-size: 1rem;
-    /* opcional: reduzir a fonte também */
     font-weight: bolder;
     border: none;
     cursor: pointer;
