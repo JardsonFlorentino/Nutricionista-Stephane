@@ -24,6 +24,28 @@ header {
     padding: 10px 5vw;
     background-color: #F5FDFC;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1010;
+}
+
+main {    
+    padding-top: 110px; 
+}
+
+.nav-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+#hamburger-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #876d55;
 }
 
 #agendar-consulta {
@@ -47,7 +69,7 @@ header {
 }
 
 #logo03 {
-    height: 90px;
+    height: 70px;
 }
 
 #logo03:hover {
@@ -770,10 +792,39 @@ html {
     }
 
     header {
-        flex-direction: column;
-        gap: 20px;
+        flex-direction: row;
+        justify-content: space-between;
         padding-top: 20px;
         padding-bottom: 20px;
+        position: relative;
+    }
+
+    main {
+        /* Altura do header no mobile: 90px do logo + 40px de padding vertical */
+        padding-top: 130px;
+    }
+
+    #hamburger-btn {
+        display: block;
+        z-index: 1002;
+    }
+
+    .nav-wrapper {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #F5FDFC;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        gap: 15px;
+        z-index: 1001;
+    }
+
+    .nav-wrapper.active {
+        display: flex;
     }
 
     .menu {
@@ -787,6 +838,10 @@ html {
         align-items: center;
         gap: 10px;
 
+    }
+
+    #agendar-consulta {
+        width: 220px;
     }
 
     .inicio,

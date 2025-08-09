@@ -1,4 +1,3 @@
-// Preloader
 const preloader = document.getElementById('preloader');
 const percentageElement = document.getElementById('preloader-percentage');
 const minLoadTime = 4000;
@@ -137,3 +136,31 @@ form.addEventListener('submit', function (event) {
     }, 4000);
   }, 1000);
 });
+
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const navWrapper = document.querySelector('.nav-wrapper');
+const navLinks = document.querySelectorAll('.nav-wrapper a');
+
+if (hamburgerBtn && navWrapper) {
+  hamburgerBtn.addEventListener('click', () => {
+    const isActive = navWrapper.classList.toggle('active');
+    hamburgerBtn.setAttribute('aria-expanded', isActive);
+
+    const icon = hamburgerBtn.querySelector('i');
+    if (isActive) {
+      icon.classList.remove('fa-bars');
+      icon.classList.add('fa-times');
+    } else {
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-bars');
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (navWrapper.classList.contains('active')) {
+        hamburgerBtn.click();
+      }
+    });
+  });
+}
