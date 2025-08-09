@@ -1,4 +1,40 @@
-// ScrollReveal
+// Preloader
+const preloader = document.getElementById('preloader');
+const percentageElement = document.getElementById('preloader-percentage');
+const minLoadTime = 4000;
+const startTime = new Date().getTime();
+
+if (preloader && percentageElement) {
+  let currentPercentage = 0;
+  const intervalTime = minLoadTime / 100;
+
+  const updatePercentage = setInterval(() => {
+    if (currentPercentage < 100) {
+      currentPercentage++;
+      percentageElement.textContent = `${currentPercentage}%`;
+    } else {
+
+      clearInterval(updatePercentage);
+    }
+  }, intervalTime);
+}
+
+window.addEventListener('load', () => {
+  if (preloader) {
+    const endTime = new Date().getTime();
+    const loadTime = endTime - startTime;
+
+    let delay = 0;
+    if (loadTime < minLoadTime) {
+      delay = minLoadTime - loadTime;
+    }
+
+    setTimeout(() => {
+      preloader.classList.add('hidden');
+    }, delay);
+  }
+});
+
 const script = document.createElement('script');
 script.src = "https://unpkg.com/scrollreveal";
 script.onload = () => {
@@ -15,16 +51,16 @@ script.onload = () => {
     origin: 'left',
     interval: 500,
     distance: '70px',
-    scale: 0.8,
-    opaçity: 0,
+    scale: 0.9,
+    opacity: 0,
   });
 
   ScrollReveal().reveal('.sobre-conteudo > *', {
     ...configBase,
-    origin: 'rotate: { x: 0, y: 0, z: 45 },',
+    origin: 'bottom',
+    rotate: { x: 0, y: 80, z: 0 },
     interval: 500,
-    opaçity: 0.1,
-    
+    opacity: 0,
   });
 
   ScrollReveal().reveal('.servicos-grid > div', {
@@ -57,7 +93,7 @@ document.body.appendChild(script);
 const form = document.querySelector('form');
 const botaoEnviar = form.querySelector('button[type="submit"]');
 
-form.addEventListener('submit', function(event) {
+form.addEventListener('submit', function (event) {
   event.preventDefault();
 
   const nome = document.getElementById('inputName').value.trim();
@@ -81,7 +117,7 @@ form.addEventListener('submit', function(event) {
   botaoEnviar.disabled = true;
 
   const numeroWhats = '5581986438384';
-  const mensagem = 
+  const mensagem =
     `Olá! Gostaria de agendar uma consulta.%0A` +
     `Nome: ${encodeURIComponent(nome)}%0A` +
     `Email: ${encodeURIComponent(email)}%0A` +
@@ -98,6 +134,6 @@ form.addEventListener('submit', function(event) {
     setTimeout(() => {
       botaoEnviar.textContent = 'Enviar';
       botaoEnviar.disabled = false;
-    }, 4000); 
+    }, 4000);
   }, 1000);
 });
