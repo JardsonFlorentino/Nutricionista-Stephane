@@ -22,7 +22,7 @@ const CONFIG = {
     duration: 3000,
     easing: 'ease',
     reset: true,
-    viewFactor: 0.5
+    viewFactor: 0.3
   }
 };
 
@@ -452,7 +452,7 @@ class MobileMenuManager {
       icon.classList.remove('fa-bars');
       icon.classList.add('fa-times');
     }
-    document.body.style.overflow = 'hidden';
+    document.body.classList.add('menu-open');
     Utils.log.info('Mobile menu opened');
   }
   closeMenu() {
@@ -464,7 +464,7 @@ class MobileMenuManager {
       icon.classList.remove('fa-times');
       icon.classList.add('fa-bars');
     }
-    document.body.style.overflow = '';
+    document.body.classList.remove('menu-open');
     Utils.log.info('Mobile menu closed');
   }
 }
@@ -544,6 +544,12 @@ class ScrollRevealManager {
       interval: 500,
       opacity: 0,
     });
+    ScrollReveal().reveal('.quem-sou-eu-ster', {
+      ...configBase,
+      origin: 'bottom',
+      opacity: 0,
+      delay: 200
+    });
     ScrollReveal().reveal('.servico-card', {
       ...configBase,
       origin: 'right',
@@ -598,7 +604,7 @@ class ScrollRevealManager {
         }
       });
     }, observerOptions);
-    const elements = document.querySelectorAll('.servico-card, .depoimento-card, .receita-card, .sobre-conteudo > *');
+    const elements = document.querySelectorAll('.servico-card, .depoimento-card, .receita-card, .sobre-conteudo > *, .quem-sou-eu-ster');
     elements.forEach(el => observer.observe(el));
   }
 }
@@ -753,23 +759,3 @@ document.addEventListener('keydown', (e) => {
     }
   }
 });
-
-function announceToScreenReader(message) {
-  const announcement = document.createElement('div');
-  announcement.setAttribute('aria-live', 'polite');
-  announcement.setAttribute('aria-atomic', 'true');
-  announcement.className = 'sr-only';
-  announcement.textContent = message;
-  document.body.appendChild(announcement);
-  setTimeout(() => {
-    document.body.removeChild(announcement);
-  }, 1000);
-}
-
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = {
-    App,
-    Utils,
-    CONFIG
-  };
-}
