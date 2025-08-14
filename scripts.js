@@ -22,7 +22,7 @@ const CONFIG = {
     duration: 3000,
     easing: 'ease',
     reset: true,
-    viewFactor: 0.3
+    viewFactor: 0.10
   }
 };
 
@@ -532,6 +532,26 @@ class ScrollRevealManager {
       distance: '70px',
       scale: 0.9,
       opacity: 0,
+    });
+    ScrollReveal().reveal('.motivacao-card', {
+      ...configBase,
+      origin: 'bottom',
+      interval: 150,
+      distance: '40px'
+    });
+    ScrollReveal().reveal('.motivacao h2, .sobre h2, .servicos h2, .depoimentos h2, .receitas h2, .agendamento h2', {
+      ...configBase,
+      origin: 'top',
+      distance: '30px',
+      opacity: 0,
+      scale: 0.95,
+      duration: 2500
+    });
+    ScrollReveal().reveal('.motivacao-button', {
+      ...configBase,
+      origin: 'bottom',
+      distance: '40px',
+      delay: 300
     });
     ScrollReveal().reveal('.sobre-conteudo > *', {
       ...configBase,

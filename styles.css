@@ -99,7 +99,7 @@ html {
     font-weight: 600;
     text-decoration: none;
     cursor: pointer;
-    transition: var(--transition-default);
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
     box-shadow: var(--shadow-medium);
 }
 
@@ -320,30 +320,26 @@ main {
 
 .inicio {
     display: flex;
-    align-items: flex-start;
-    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
     width: 100%;
-    min-height: 90vh;
-    margin: var(--spacing-md) 0;
-    padding: var(--spacing-md) 6vw;
-    gap: var(--spacing-lg);
-}
-
-.inicio-coluna-esquerda {
-    flex: 0 0 45%;
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
+    min-height: auto;
+    margin: var(--spacing-md) auto;
+    padding: 0 var(--spacing-sm);
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
 .inicio-img {
+    flex: 0 0 60%;
+    max-width: 900px;
     transition: var(--transition-default);
 }
 
 .inicio-img img {
     width: 100%;
     height: auto;
-    min-width: 300px;
     border-radius: var(--radius-pill);
     box-shadow: var(--shadow-medium);
 }
@@ -354,10 +350,11 @@ main {
 }
 
 .inicio-conteudo {
-    flex: 1;
+    flex: 0 0  40%;
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
+    max-width: 500px;
 }
 
 .inicio-info {
@@ -423,6 +420,62 @@ main {
 #saiba-mais:focus {
     transform: scale(1.05);
     box-shadow: var(--shadow-medium);
+}
+
+.motivacao {
+    margin: var(--spacing-lg) auto;
+    text-align: center;
+}
+
+.motivacao h2 {
+    margin-top: 150px;
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-2xl);
+    color: var(--primary-color);
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: var(--transition-default);
+}
+
+.motivacao h2:hover {
+    color: var(--secondary-color);
+    transform: translateY(-8px) scale(1.02);
+}
+
+.motivacao-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.motivacao-card {
+    background: var(--background-light);
+    border-radius: var(--radius-medium);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-light);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    text-align: left;
+    transition: var(--transition-fast);
+}
+
+.motivacao-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: var(--shadow-medium);
+}
+
+.motivacao-card img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.motivacao-card p {
+    margin: 0;
+    color: var(--text-primary);
+    font-weight: 500;
 }
 
 .sobre {
@@ -545,7 +598,7 @@ main {
     padding: var(--spacing-md);
     box-shadow: var(--shadow-medium);
     text-align: center;
-    transition: var(--transition-fast), box-shadow var(--transition-fast);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     width: 100%;
     max-width: 350px;
     
@@ -1027,6 +1080,29 @@ main {
     transform: translateX(5px);
 }
 
+.motivacao-button {
+    margin-top: var(--spacing-md);
+}
+
+.motivacao-button a {
+    display: inline-block;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: var(--font-size-large);
+    box-shadow: var(--shadow-medium);
+    transition: var(--transition-default);
+}
+
+.motivacao-button a:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: var(--shadow-heavy);
+    background: var(--primary-color);
+    color: var(--text-light);
+}
 .footer-bottom {
     text-align: center;
     margin-top: var(--spacing-lg);
@@ -1103,21 +1179,16 @@ main {
         align-items: center;
     }
 
-    .inicio-coluna-esquerda {
-        flex: none;
-        width: 100%;
-        order: 2;
-    }
     .inicio-img img {
         min-width: unset;
         width: 90%;
         max-width: 400px;
     }
-
     .inicio-conteudo {
-        flex: none;
-        width: 100%;
         order: 1;
+    }
+    .inicio-img {
+        order: 2;
     }
     .inicio-info {
         padding: 25px;
