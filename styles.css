@@ -446,11 +446,11 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: var(--spacing-md);
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);    
 }
 
 .motivacao-card {
-    background: var(--background-light);
+    background: none;
     border-radius: var(--radius-medium);
     padding: var(--spacing-md);
     box-shadow: var(--shadow-light);
@@ -458,24 +458,34 @@ main {
     align-items: center;
     gap: var(--spacing-sm);
     text-align: left;
-    transition: var(--transition-fast);
+    transition: var(--transition-default);
 }
 
 .motivacao-card:hover {
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: var(--shadow-medium);
+    transform: translateY(-8px) scale(1.02);
+  
 }
 
 .motivacao-card img {
-    width: 40px;
-    height: 40px;
+    width: 200px;
+    height: 200px;
     object-fit: contain;
+    transition: var(--transition-default)
 }
+
+.motivacao-card img:hover {
+    transform: translateY(-8px) scale(1.02);
+} 
 
 .motivacao-card p {
     margin: 0;
     color: var(--text-primary);
     font-weight: 500;
+    transition: var(--transition-default)
+}
+
+.motivacao-card p:hover {
+    transform: translateY(-8px) scale(1.02);
 }
 
 .sobre {

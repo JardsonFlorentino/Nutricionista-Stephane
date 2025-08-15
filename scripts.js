@@ -519,77 +519,50 @@ class ScrollRevealManager {
       viewFactor
     } = CONFIG.scrollReveal;
     const configBase = {
-      distance,
-      duration,
-      easing,
-      reset,
-      viewFactor
+      distance, duration, easing, reset, viewFactor
     };
-    ScrollReveal().reveal('.inicio > div', {
-      ...configBase,
-      origin: 'left',
-      interval: 500,
-      distance: '70px',
-      scale: 0.9,
-      opacity: 0,
-    });
-    ScrollReveal().reveal('.motivacao-card', {
-      ...configBase,
-      origin: 'bottom',
-      interval: 150,
-      distance: '40px'
-    });
-    ScrollReveal().reveal('.motivacao h2, .sobre h2, .servicos h2, .depoimentos h2, .receitas h2, .agendamento h2', {
-      ...configBase,
-      origin: 'top',
-      distance: '30px',
-      opacity: 0,
-      scale: 0.95,
-      duration: 2500
-    });
-    ScrollReveal().reveal('.motivacao-button', {
-      ...configBase,
-      origin: 'bottom',
-      distance: '40px',
-      delay: 300
-    });
-    ScrollReveal().reveal('.sobre-conteudo > *', {
-      ...configBase,
-      origin: 'bottom',
-      rotate: {
-        x: 0,
-        y: 80,
-        z: 0
-      },
-      interval: 500,
-      opacity: 0,
-    });
-    ScrollReveal().reveal('.quem-sou-eu-ster', {
-      ...configBase,
-      origin: 'bottom',
-      opacity: 0,
-      delay: 200
-    });
-    ScrollReveal().reveal('.servico-card', {
-      ...configBase,
-      origin: 'right',
-      interval: 200,
-    });
-    ScrollReveal().reveal('.depoimento-card', {
-      ...configBase,
-      origin: 'bottom',
-      interval: 200,
-    });
-    ScrollReveal().reveal('.receita-card', {
-      ...configBase,
-      origin: 'top',
-      distance: '70px',
-      interval: 200,
-    });
-    ScrollReveal().reveal('.agendamento form > *', {
-      ...configBase,
-      origin: 'left',
-      interval: 200,
+
+    const sectionTitles = '.motivacao h2, .sobre h2, .servicos h2, .depoimentos h2, .receitas h2, .agendamento h2';
+
+    const animationConfigs = [{
+      selector: '.inicio > div',
+      options: { origin: 'left', interval: 500, distance: '70px', scale: 0.9, opacity: 0 }
+    }, {
+      selector: '.motivacao-card',
+      options: { origin: 'bottom', interval: 150, distance: '40px' }
+    }, {
+      selector: sectionTitles,
+      options: { origin: 'top', distance: '30px', opacity: 0, scale: 0.95, duration: 2500 }
+    }, {
+      selector: '.motivacao-button',
+      options: { origin: 'bottom', distance: '40px', delay: 300 }
+    }, {
+      selector: '.sobre-conteudo > *',
+      options: { origin: 'bottom', rotate: { x: 0, y: 80, z: 0 }, interval: 500, opacity: 0 }
+    }, {
+      selector: '.quem-sou-eu-ster',
+      options: { origin: 'bottom', opacity: 0, delay: 200 }
+    }, {
+      selector: '.servico-card',
+      options: { origin: 'right', interval: 200 }
+    }, {
+      selector: '.depoimento-card',
+      options: { origin: 'bottom', interval: 200 }
+    }, {
+      selector: '.receita-card',
+      options: { origin: 'top', distance: '70px', interval: 200 }
+    }, {
+      selector: '.agendamento form > *',
+      options: { origin: 'left', interval: 200 }
+    }, ];
+
+    animationConfigs.forEach(({
+      selector,
+      options
+    }) => {
+      ScrollReveal().reveal(selector, { ...configBase,
+        ...options
+      });
     });
   }
   fallbackAnimations() {
