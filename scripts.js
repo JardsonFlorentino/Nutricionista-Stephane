@@ -166,10 +166,10 @@ class WhatsAppManager {
       } = CONFIG.whatsapp;
       let message = messages[action] || messages.geral;
       if (customData) {
-        message += `%0A%0ADados do contato:%0A`;
-        message += `Nome: ${Utils.sanitizeForURL(customData.nome)}%0A`;
-        message += `Email: ${Utils.sanitizeForURL(customData.email)}%0A`;
-        message += `Telefone: ${Utils.sanitizeForURL(customData.telefone)}`;
+        message += `\n\n*Dados do contato:*\n`;
+        message += `*Nome:* ${customData.nome.trim()}\n`;
+        message += `*Email:* ${customData.email.trim()}\n`;
+        message += `*Telefone:* ${customData.telefone.trim()}`;
       }
       const url = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
       const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
@@ -554,13 +554,14 @@ class ScrollRevealManager {
     }, {
       selector: '.agendamento form > *',
       options: { origin: 'left', interval: 200 }
-    }, ];
+    },];
 
     animationConfigs.forEach(({
       selector,
       options
     }) => {
-      ScrollReveal().reveal(selector, { ...configBase,
+      ScrollReveal().reveal(selector, {
+        ...configBase,
         ...options
       });
     });
