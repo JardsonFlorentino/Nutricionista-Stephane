@@ -35,24 +35,26 @@
             <a href="#inicio" aria-label="Voltar ao início">
                 <img src="./assets/logo03.png" alt="Logo Nutricionista Stephane" id="logo03">
             </a>
-            <nav class="nav-wrapper" id="nav-wrapper" role="navigation" aria-label="Menu principal">
-                <ul class="menu-links">
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-                <a href="#contato" id="agendar-consulta" class="btn-primario">Agende sua consulta</a>
+            <nav role="navigation" aria-label="Menu principal">
+                <button id="hamburger-btn" aria-label="Abrir menu de navegação" aria-expanded="false"
+                    aria-controls="nav-wrapper">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
+                <div class="nav-wrapper" id="nav-wrapper">
+                    <ul class="menu-links">
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                    <a href="#contato" id="agendar-consulta" class="btn-primario">Agende sua consulta</a>
+                </div>
             </nav>
-            <button id="hamburger-btn" aria-label="Abrir menu de navegação" aria-expanded="false"
-                aria-controls="nav-wrapper">
-                <i class="fas fa-bars" aria-hidden="true"></i>
-            </button>
         </div>
     </header>
 
     <main>
-        <section class="inicio" id="inicio">
+        <section class="inicio" id="inicio" aria-labelledby="info-consulta">
             <div class="inicio-conteudo">
                 <div class="inicio-info">
                     <h1 id="info-consulta">Faço a dieta prática, que se encaixa na sua rotina e alcance seus
@@ -187,16 +189,16 @@
                     <h3>Nutrição Clínica</h3>
                     <ul>
                         <li>Diabetes</li>
-                       <li>Hipertensão</li>
-                       <li>Hipotireoidismo</li>
-                       <li>Esteatose hepática</li>
-                       <li>Cirurgia bariátrica (pré e pós-operatório)</li>
-                       <li>Doenças autoimunes</li>
-                       <li>Doença renal</li>
-                       <li>Síndrome do intestino irritável</li>
-                       <li>Alergias alimentares</li>
-                       <li>Gastrite e refluxo</li>
-                       <li>Disbiose intestinal</li>
+                        <li>Hipertensão</li>
+                        <li>Hipotireoidismo</li>
+                        <li>Esteatose hepática</li>
+                        <li>Cirurgia bariátrica (pré e pós-operatório)</li>
+                        <li>Doenças autoimunes</li>
+                        <li>Doença renal</li>
+                        <li>Síndrome do intestino irritável</li>
+                        <li>Alergias alimentares</li>
+                        <li>Gastrite e refluxo</li>
+                        <li>Disbiose intestinal</li>
                     </ul>
                     <button type="button" class="btn-servico" data-whats-action="nutricao-clinica">Saiba mais</button>
                 </article>
@@ -210,7 +212,8 @@
                         <li>Montagem de pratos equilibrados (proporção de macro e micronutrientes)</li>
                         <li>Organização de compras e cardápios semanais</li>
                         <li>Redução de ultraprocessados sem radicalismos</li>
-                        <li>Autonomia alimentar: desenvolver confiança para escolher e comer bem em qualquer contexto</li>
+                        <li>Autonomia alimentar: desenvolver confiança para escolher e comer bem em qualquer contexto
+                        </li>
                     </ul>
                     <button type="button" class="btn-servico" data-whats-action="reeducacao-alimentar">Saiba
                         mais</button>
@@ -247,15 +250,16 @@
                     <img src="./assets/Nutrição Comportamental.jpg" alt="Nutrição Comportamental" loading="lazy">
                     <h3>Nutrição Comportamental</h3>
                     <ul>
-                         <li>Prevenção de recaídas na dieta</li>
-                         <li>Relação entre alimentação e emoções</li>
-                         <li>Depressão e comportamento alimentar</li>
-                         <li>Ansiedade e compulsão alimentar</li>
-                         <li>Mindful eating (alimentação consciente)</li>
-                         <li>Autocontrole e estratégias práticas no dia a dia</li>
-                         <li>Reeducação alimentar sustentável</li>                           
+                        <li>Prevenção de recaídas na dieta</li>
+                        <li>Relação entre alimentação e emoções</li>
+                        <li>Depressão e comportamento alimentar</li>
+                        <li>Ansiedade e compulsão alimentar</li>
+                        <li>Mindful eating (alimentação consciente)</li>
+                        <li>Autocontrole e estratégias práticas no dia a dia</li>
+                        <li>Reeducação alimentar sustentável</li>
                     </ul>
-                    <button type="button" class="btn-servico" data-whats-action="nutricao-esportiva">Saiba mais</button>
+                    <button type="button" class="btn-servico" data-whats-action="nutricao-comportamental">Saiba
+                        mais</button>
                 </article>
 
                 <article class="servico-card">
@@ -389,7 +393,7 @@
                     <img src="./assets/logo01.jpg" alt="Logo Nutricionista Stephane" class="footer-logo">
                 </a>
                 <div class="rede-social" role="complementary" aria-label="Redes sociais">
-                    <a href="#" data-whats-action="geral" aria-label="Falar no WhatsApp">
+                    <a href="#" data-whats-action="geral" aria-label="Abrir conversa no WhatsApp">
                         <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
                     </a>
                     <a href="https://www.instagram.com/stephanelima.nutri" target="_blank" rel="noopener noreferrer"

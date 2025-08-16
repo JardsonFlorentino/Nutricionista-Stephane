@@ -10,9 +10,7 @@
     --shadow-light: 0px 4px 12px rgba(148, 153, 234, 0.08);
     --shadow-medium: 0px 10px 24px rgba(148, 153, 234, 0.1);
     --shadow-heavy: 0px 16px 40px rgba(37, 150, 190, 0.25);
-    --shadow-whatsapp: 0 4px 12px rgba(80, 211, 213, 1);
-    
-    /* TIMINGS OTIMIZADOS */
+    --shadow-whatsapp: 0 4px 12px rgba(80, 211, 213, 1);    
     --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-default: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -463,7 +461,18 @@
     }
 
     .inicio {
-        flex-direction: column-reverse;
+        flex-direction: column;
+        gap: var(--spacing-lg);
+    }
+
+    .inicio-img {
+        order: 1;
+        width: 100%;
+    }
+    .inicio-conteudo {
+        order: 2;
+        width: 100%;
+        gap: var(--spacing-md);
     }
 
     .sobre-conteudo {
@@ -472,14 +481,21 @@
 
     .inicio-img img {
         min-width: unset;
-        width: 90%;
-        max-width: 400px;
+        width: 100%;
+        max-width: none;
+        border-radius: var(--radius-large);
     }
 
     .inicio-info {
-        padding: 25px;
+        padding: var(--spacing-md) var(--spacing-lg);
         font-size: var(--font-size-base);
         line-height: 1.6;
+        border-radius: var(--radius-large);
+    }
+
+    #info-atendimento {
+        padding: var(--spacing-md) var(--spacing-lg); 
+        border-radius: var(--radius-large);
     }
 
     .sobre-texto p {
@@ -890,6 +906,11 @@ header {
     transform: translateY(-4px) translateZ(0);
 }
 
+header nav {
+    display: flex;
+    align-items: center;
+}
+
 .nav-wrapper {
     display: flex;
     align-items: center;
@@ -937,7 +958,7 @@ header {
 }
 
 #hamburger-btn {
-    display: none;
+    display: block;
     background: none;
     border: none;
     font-size: 28px;
@@ -967,13 +988,13 @@ main {
     min-height: auto;
     margin: var(--spacing-md) auto;
     padding: 0 var(--spacing-sm);
-    gap: 30px;
+    gap: var(--spacing-lg);
     flex-wrap: wrap;
 }
 
 .inicio-img {
-    flex: 0 0 60%;
-    max-width: 900px;
+    flex: 1 1 65%;
+    max-width: 950px;
     transition: var(--transition-default);
 }
 
@@ -991,7 +1012,7 @@ main {
 }
 
 .inicio-conteudo {
-    flex: 0 0 40%;
+    flex: 1 1 35%;
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
@@ -1000,6 +1021,7 @@ main {
 
 .inicio-info {
     background: var(--primary-color);
+    background-color: rgba(37, 150, 190, 0.7);
     border-radius: var(--radius-pill);
     box-shadow: var(--shadow-medium);
     padding: var(--spacing-lg);
@@ -1019,8 +1041,14 @@ main {
     margin: 0;
 }
 
+.subtitulo-inicio {
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+}
+
 #info-atendimento {
     background: var(--background-light);
+    background-color: rgba(255, 255, 255, 0.4);
     border-radius: var(--radius-pill);
     padding: var(--spacing-md);
     font-weight: 700;

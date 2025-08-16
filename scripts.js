@@ -10,7 +10,8 @@ const CONFIG = {
       'reeducacao-alimentar': 'Olá! Quero saber mais sobre o processo de reeducação alimentar com seu acompanhamento.',
       'emagrecimento': 'Olá! Estou buscando emagrecer de forma saudável e gostaria de sua ajuda.',
       'nutricao-esportiva': 'Olá! Pratico atividades físicas e quero saber mais sobre a nutrição esportiva.',
-      'consultoria-online': 'Olá! Tenho interesse na sua consulta online. Pode me explicar como funciona?'
+      'consultoria-online': 'Olá! Tenho interesse na sua consulta online. Pode me explicar como funciona?',
+      'nutricao-comportamental': 'Olá! Gostaria de saber mais sobre a nutrição comportamental e como ela pode me ajudar.'
     }
   },
   preloader: {
@@ -407,6 +408,7 @@ class FormManager {
 
 class MobileMenuManager {
   constructor() {
+    console.log('Menu hamburguer inicializado');
     this.hamburgerBtn = document.getElementById('hamburger-btn');
     this.navWrapper = document.querySelector('.nav-wrapper');
     this.navLinks = document.querySelectorAll('.nav-wrapper a');
@@ -474,7 +476,7 @@ class ScrollRevealManager {
     this.isLoaded = false;
     this.init();
   }
-  init() {    
+  init() {
     window.addEventListener('load', () => {
       this.loadScrollReveal()
         .then(() => {
