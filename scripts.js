@@ -474,16 +474,18 @@ class ScrollRevealManager {
     this.isLoaded = false;
     this.init();
   }
-  init() {
-    this.loadScrollReveal()
-      .then(() => {
-        this.setupAnimations();
-        Utils.log.success('ScrollReveal loaded and configured');
-      })
-      .catch((error) => {
-        Utils.log.error('ScrollReveal failed to load', error);
-        this.fallbackAnimations();
-      });
+  init() {    
+    window.addEventListener('load', () => {
+      this.loadScrollReveal()
+        .then(() => {
+          this.setupAnimations();
+          Utils.log.success('ScrollReveal configured after full page load');
+        })
+        .catch((error) => {
+          Utils.log.error('ScrollReveal failed to load', error);
+          this.fallbackAnimations();
+        });
+    });
   }
   loadScrollReveal() {
     return new Promise((resolve, reject) => {
