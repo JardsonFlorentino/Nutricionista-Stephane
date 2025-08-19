@@ -5,6 +5,7 @@
     --text-primary: #876d55;
     --text-light: #F5FDFC;
     --background-light: #F5FDFC;
+    --background-dark:rgba(173, 146, 115, 0.7);
     --success-color: #7FFFD4;
     --error-color: #ff6b6b;
     --shadow-light: 0px 4px 12px rgba(148, 153, 234, 0.08);
@@ -48,21 +49,9 @@
     transform: translateY(0);
 }
 
-.motivacao-card:nth-child(1) { transition-delay: 0.1s; }
-.motivacao-card:nth-child(2) { transition-delay: 0.2s; }
-.motivacao-card:nth-child(3) { transition-delay: 0.3s; }
-
-.servico-card:nth-child(1) { transition-delay: 0.1s; }
-.servico-card:nth-child(2) { transition-delay: 0.2s; }
-.servico-card:nth-child(3) { transition-delay: 0.3s; }
-
-.depoimento-card:nth-child(1) { transition-delay: 0.1s; }
-.depoimento-card:nth-child(2) { transition-delay: 0.2s; }
-.depoimento-card:nth-child(3) { transition-delay: 0.3s; }
-
-.receita-card:nth-child(1) { transition-delay: 0.1s; }
-.receita-card:nth-child(2) { transition-delay: 0.2s; }
-.receita-card:nth-child(3) { transition-delay: 0.3s; }
+.motivacao-card, .servico-card, .depoimento-card, .receita-card {
+    transition-delay: calc(0.1s * var(--stagger-index, 1));
+}
 
 *,
 *::before,
@@ -381,6 +370,19 @@
     color: var(--text-light);
 }
 
+.motivacao-img {
+    margin-top: var(--spacing-xl);
+    text-align: center;
+}
+
+.motivacao-img img {
+    max-width: 600px; /* Define um tamanho máximo para a imagem */
+    width: 100%;      /* Garante que a imagem seja responsiva */
+    height: auto;
+    border-radius: var(--radius-large);
+    box-shadow: var(--shadow-medium);
+}
+
 .footer-bottom {
     text-align: center;
     margin-top: var(--spacing-lg);
@@ -473,7 +475,7 @@
 
     .inicio-img {
         order: 1;
-        width: 100%;
+        width: 800px;
     }
     .inicio-conteudo {
         order: 2;
@@ -1175,15 +1177,21 @@ main {
     transform: translateY(-2px) translateZ(0);
 }
 
+.sobre-bloco {
+    display: flex;
+    align-items: stretch;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
 .sobre-conteudo {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     gap: var(--spacing-lg);
 }
 
 .sobre-texto {
-    flex: 1;
-    background-color: rgba(255, 255, 255, 0.5);
+    flex: 1 1 50%; /* Ocupa 50% do espaço central */
+    background: rgba(235, 229, 207, 0.6);
     box-shadow: var(--shadow-medium);
     border-radius: var(--radius-large);
     padding: var(--spacing-xl);
@@ -1198,43 +1206,67 @@ main {
 
 .sobre-texto p {
     font-weight: bold;
-    font-size: 1.4rem;
-    line-height: 1.6;
-    color: var(--secondary-color);
+    font-size: 1.1rem;
+    line-height: 1.2;
+    color: #4b3832;
     text-align: justify;
     margin: 0;
     transition: var(--transition-default);
 }
 
-.sobre-imagens-container {
-    flex: 1;
+.sobre-bloco.reverse {
+    flex-direction: row-reverse;
+}
+
+.sobre-imagem, .sobre-imagem-coluna {
+    flex: 1 1 50%; /* Ocupa 50% do espaço, tornando-se maior */
     display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
+    align-items: stretch;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 750px;
+    
+}
+
+.sobre-imagem-individual {
+    flex: 1 1 30%; /* Cada imagem ocupa 30% */
+    display: flex;
     align-items: center;
+    justify-content: center;
+    max-width: 600px;
 }
 
-.quem-sou-eu-ster {
-    margin-top: 60px;
-    text-align: center;
-}
-
-.sobre-img-principal,
-.sobre-img-secundaria {
+.sobre-imagem img, .sobre-imagem-coluna img, .sobre-imagem-individual img {    
     width: 100%;
     height: auto;
     border-radius: var(--radius-medium);
     box-shadow: var(--shadow-medium);
     transition: var(--transition-default);
-    aspect-ratio: 3/4;
+    object-fit: cover;
+} 
+
+.sobre-imagem img:hover, .sobre-imagem-coluna img:hover, .sobre-imagem-individual img:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: var(--shadow-heavy);
 }
 
-.sobre-img-secundaria {
-    max-width: 80%;
+.sobre-bloco-banner {
+    margin-top: var(--spacing-lg);
+    text-align: center;   
 }
 
-.sobre-imagens-container:hover .sobre-img-principal,
-.quem-sou-eu-ster:hover .sobre-img-secundaria {
+.sobre-bloco-banner img {   
+    max-width: 100%;    
+    width: 600px;
+    height: auto;
+    border-radius: var(--radius-medium);
+    box-shadow: var(--shadow-medium);
+    transition: var(--transition-default);
+}
+
+.sobre-bloco-banner img:hover {
     transform: translateY(-4px) scale(1.01) translateZ(0);
     box-shadow: var(--shadow-heavy);
 }
@@ -1483,14 +1515,15 @@ main {
 .saiba-mais-receitas {
     display: inline-block;
     background: none;
+    border: 2px solid transparent;
     color: var(--text-primary);
     font-size: var(--font-size-base);
     font-weight: 700;
     padding: var(--spacing-sm) var(--spacing-md);
     text-decoration: none;
     transition: var(--transition-default);
-    border: 2px solid transparent;
-    border-radius: var(--radius-small);
+    border-radius: var(--radius-pill);
+    cursor: pointer;
 }
 
 .saiba-mais-receitas:hover,

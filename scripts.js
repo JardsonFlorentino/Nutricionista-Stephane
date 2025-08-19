@@ -20,7 +20,7 @@ const CONFIG = {
   },
   scrollReveal: {
     distance: '50px',
-    duration: 3000,
+    duration: 1000,
     easing: 'ease',
     reset: true,
     viewFactor: 0.10
@@ -408,7 +408,6 @@ class FormManager {
 
 class MobileMenuManager {
   constructor() {
-    console.log('Menu hamburguer inicializado');
     this.hamburgerBtn = document.getElementById('hamburger-btn');
     this.navWrapper = document.querySelector('.nav-wrapper');
     this.navLinks = document.querySelectorAll('.nav-wrapper a');
@@ -541,11 +540,14 @@ class ScrollRevealManager {
       selector: '.motivacao-button',
       options: { origin: 'bottom', distance: '40px', delay: 300 }
     }, {
-      selector: '.sobre-conteudo > *',
+      selector: '.motivacao-img',
+      options: { origin: 'bottom', distance: '40px', delay: 400 }
+    }, {
+      selector: '.sobre-bloco > *',
       options: { origin: 'bottom', rotate: { x: 0, y: 80, z: 0 }, interval: 500, opacity: 0 }
     }, {
-      selector: '.quem-sou-eu-ster',
-      options: { origin: 'bottom', opacity: 0, delay: 200 }
+      selector: '.sobre-bloco-banner',
+      options: { origin: 'bottom', opacity: 0, delay: 200, distance: '40px' }
     }, {
       selector: '.servico-card',
       options: { origin: 'right', interval: 200 }
@@ -712,9 +714,11 @@ document.addEventListener('click', (e) => {
     e.preventDefault();
     const targetId = link.getAttribute('href').substring(1);
     const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      const headerHeight = document.querySelector('header').offsetHeight;
-      const targetPosition = targetElement.offsetTop - headerHeight - 20;
+    const header = document.querySelector('header');
+
+    if (targetElement && header) {
+      const headerHeight = header.offsetHeight;
+      const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - headerHeight - 20;
       window.scrollTo({
         top: targetPosition,
         behavior: 'smooth'

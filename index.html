@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="./assets/logo01.jpg" type="image/jpeg">
-    <script src="scripts.js" defer></script>
+    <script src="./scripts.js" defer></script>
     <title>Nutricionista Stephane</title>
 </head>
 
@@ -114,35 +114,57 @@
                 </div>
             </div>
             <div class="motivacao-button">
-                <a href="#" data-whats-action="geral">💬 Eu posso te ajudar a mudar essa história!</a>
+                <a href="#contato" data-whats-action="geral">💬 Eu posso te ajudar a mudar essa história!</a>
+            </div>
+            <div class="motivacao-img">
+                <img src="./assets/infomação do atendimento.png" alt="Banner informativo sobre o atendimento"
+                    loading="lazy">
             </div>
         </section>
         <section class=" sobre container" id="sobre">
             <h2>Sobre</h2>
-            <div class="sobre-conteudo">
-
+            <div class="sobre-bloco">
                 <div class="sobre-texto">
-                    <p>Olá! Eu sou Stephane Lima, nutricionista dedicada a transformar vidas através de uma alimentação que faz sentido para você.
+                    <p>Olá! Eu sou Stephane Lima, nutricionista dedicada a transformar vidas através de uma alimentação
+                        que faz sentido para você.
                         <br>
-                        <br>Sei que buscar hábitos mais saudáveis pode parecer difícil e cheio de regras, mas e se eu te disser que pode ser prazeroso, simples e, acima de tudo, libertador? Meu objetivo é mostrar que cuidar de você pode ser leve, prazeroso e totalmente adaptado à sua rotina.
-                        <br>
-                        <br>Com especializações em <strong>Nutrição Clinica, Esportiva e exames Laboratoriais</strong>, e mais de 1.700 atendimentos realizados desde 2021, meu trabalho vai muito além de dietas prontas. Ele é sobre você. Analiso sua rotina, seus hábitos, desafios e preferências para criar um plano alimentar totalmente personalizado, que se encaixa na sua vida e faz você se sentir bem todos os dias.
-                        <br>
-                        <br> Aqui, você encontra orientação, motivação e estratégias reais para alcançar seus objetivos de forma consistente e prazerosa. Imagine sentir-se mais leve, com mais energia e uma autoestima renovada — essa é a transformação que quero te ajudar a conquistar.
-                        <br>
-                        <br>Sua melhor versão está esperando por você. Vamos começar essa jornada juntos?                        
-                        <br>
-                        <br>CRN-6: 36452.
-                    </strong>
+                        <br>Sei que buscar hábitos mais saudáveis pode parecer difícil e cheio de regras, mas e se eu te
+                        disser que pode ser prazeroso, simples e, acima de tudo, libertador? Meu objetivo é mostrar que
+                        cuidar de você pode ser leve, prazeroso e totalmente adaptado à sua rotina.
+                    </p>
                 </div>
-                <div class="sobre-imagens-container">
-                    <img src="./assets/Foto Ster03.jpg" alt="Nutricionista Stephane em seu consultório"
-                        class="sobre-img-principal" loading="lazy">
+                <div class="sobre-imagem">
+                    <img src="./assets/Foto Ster04.jpg" alt="Nutricionista Stephane em seu consultório"
+                        loading="lazy">
                 </div>
             </div>
-            <div class="quem-sou-eu-ster">
+            <div class="sobre-bloco">
+                <div class="sobre-imagem-individual">
+                    <img src="./assets/Foto Ster03.jpg" alt="Nutricionista Stephane em seu consultório" loading="lazy">
+                </div>
+                <div class="sobre-texto">
+                    <p>Com especializações em <strong>Nutrição Clinica, Esportiva, Saúde da Mulher e Exames
+                            Laboratoriais</strong>, e mais de 1.700 atendimentos realizados desde 2021, meu trabalho vai
+                        muito além de dietas prontas. Ele é sobre você. Analiso sua rotina, seus hábitos, desafios e
+                        preferências para criar um plano alimentar totalmente personalizado, que se encaixa na sua vida
+                        e faz você se sentir bem todos os dias.
+                        <br>
+                        <br> Aqui, você encontra orientação, motivação e estratégias reais para alcançar seus objetivos
+                        de forma consistente e prazerosa.
+                        <br>
+                        <br>Sua melhor versão está esperando por você. Vamos começar essa jornada juntos?
+                        <br>
+                        <br>CRN-6: 36452.
+                    </p>
+                </div>
+                <div class="sobre-imagem-individual">
+                    <img src="./assets/Foto Ster02.jpg" alt="Nutricionista Stephane na academia"
+                        loading="lazy">
+                </div>
+            </div>
+            <div class="sobre-bloco-banner">
                 <img src="./assets/quem_sou_eu_ster.png" alt="Banner informativo sobre a nutricionista Stephane Lima"
-                    class="sobre-img-secundaria" loading="lazy">
+                    loading="lazy">
             </div>
         </section>
 
@@ -308,14 +330,14 @@
                     <img src="./assets/Salada Colorida.jpg" alt="Salada colorida com vegetais frescos" loading="lazy">
                     <h3>Salada Colorida</h3>
                     <p>Uma salada fresca e nutritiva, perfeita para o verão.</p>
-                    <a href="#" class="saiba-mais-receitas" data-receita="salada-colorida">Saiba mais</a>
+                    <button type="button" class="saiba-mais-receitas" data-receita="salada-colorida">Saiba mais</button>
                 </article>
 
                 <article class="receita-card">
                     <img src="./assets/Suco Detox.jpg" alt="Suco detox verde em copo de vidro" loading="lazy">
                     <h3>Suco Detox</h3>
                     <p>Um suco refrescante e detox para começar o dia com energia.</p>
-                    <a href="#" class="saiba-mais-receitas" data-receita="suco-detox">Saiba mais</a>
+                    <button type="button" class="saiba-mais-receitas" data-receita="suco-detox">Saiba mais</button>
                 </article>
 
                 <article class="receita-card">
@@ -323,7 +345,7 @@
                         alt="Frango grelhado acompanhado de legumes assados" loading="lazy">
                     <h3>Frango Grelhado com Legumes</h3>
                     <p>Uma refeição leve e saudável, ideal para o jantar.</p>
-                    <a href="#" class="saiba-mais-receitas" data-receita="frango-legumes">Saiba mais</a>
+                    <button type="button" class="saiba-mais-receitas" data-receita="frango-legumes">Saiba mais</button>
                 </article>
 
                 <article class="receita-card">
@@ -331,7 +353,7 @@
                         loading="lazy">
                     <h3>Quinoa com Legumes</h3>
                     <p>Uma opção rica em proteínas e fibras, perfeita para o almoço.</p>
-                    <a href="#" class="saiba-mais-receitas" data-receita="quinoa-legumes">Saiba mais</a>
+                    <button type="button" class="saiba-mais-receitas" data-receita="quinoa-legumes">Saiba mais</button>
                 </article>
             </div>
         </section>
